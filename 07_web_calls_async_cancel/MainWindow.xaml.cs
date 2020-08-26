@@ -33,9 +33,12 @@ namespace _01_web_calls
 
         private async void executeAsync_Click(object sender, RoutedEventArgs e)
         {
-            var watch = Stopwatch.StartNew();
 
-            var results = await DemoMethods.RunDownloadAsync();
+            Progress<ProgressReportModel> progress = new Progress<ProgressReportModel>();
+            progress.ProgressChanged += ReportProgress;
+
+            var watch = Stopwatch.StartNew();
+            var results = await DemoMethods.RunDownloadAsync(progress);
 
             PrintResults(results);
 
@@ -44,6 +47,12 @@ namespace _01_web_calls
             var elapsedMs = watch.ElapsedMilliseconds;
 
             resultsWindow.Text += $"Total execution time : {elapsedMs}";
+        }
+
+        private void ReportProgress(object sender, ProgressReportModel e)
+        {
+            progressBar.Value = e.PercentageComplete;
+            PrintResults(e.SitesDownloaded);
         }
 
         private async void executeParallelAsync_Click(object sender, RoutedEventArgs e)
