@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_web_calls_async_download
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_web_calls_async_whenAny", "06_web_calls_async_whenAny\06_web_calls_async_whenAny.csproj", "{1655041C-C5AB-41C6-83ED-4BF5AED3C576}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_web_calls_async_progress", "07_web_calls_async_cancel\07_web_calls_async_progress.csproj", "{2C0B8152-788E-438E-8771-865C19886991}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{1655041C-C5AB-41C6-83ED-4BF5AED3C576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1655041C-C5AB-41C6-83ED-4BF5AED3C576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1655041C-C5AB-41C6-83ED-4BF5AED3C576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0B8152-788E-438E-8771-865C19886991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0B8152-788E-438E-8771-865C19886991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0B8152-788E-438E-8771-865C19886991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0B8152-788E-438E-8771-865C19886991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{04FC211D-6F94-4EBD-91E3-9BC96FA93989} = {851A967D-76FA-4437-A586-FC51C9584C8D}
 		{D713523A-C6EA-4169-AEA1-F6578259551E} = {851A967D-76FA-4437-A586-FC51C9584C8D}
 		{1655041C-C5AB-41C6-83ED-4BF5AED3C576} = {851A967D-76FA-4437-A586-FC51C9584C8D}
+		{2C0B8152-788E-438E-8771-865C19886991} = {851A967D-76FA-4437-A586-FC51C9584C8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B275DE8-87BC-4257-AD9C-D05D9234F061}
