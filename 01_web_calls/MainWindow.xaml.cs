@@ -48,6 +48,7 @@ namespace _01_web_calls
         private WebsiteDataModel DownloadWebsite(string websiteURL)
         {
             WebsiteDataModel output = new WebsiteDataModel();
+
             WebClient client = new WebClient();
             output.WebsiteUrl = websiteURL;
             output.WebsiteData = client.DownloadString(websiteURL);
