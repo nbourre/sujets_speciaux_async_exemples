@@ -19,13 +19,9 @@ namespace _01_web_calls
         private void executeSync_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
-
             RunDownloadSync();
-
             watch.Stop();
-
             var elapsedMs = watch.ElapsedMilliseconds;
-
             resultsWindow.Text += $"Total execution time : {elapsedMs}";
         }
 
