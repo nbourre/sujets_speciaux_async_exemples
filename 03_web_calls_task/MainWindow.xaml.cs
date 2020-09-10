@@ -70,13 +70,9 @@ namespace _01_web_calls
         private async void executeAsync_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
-
             await RunDownloadAsync();
-
             watch.Stop();
-
             var elapsedMs = watch.ElapsedMilliseconds;
-
             resultsWindow.Text += $"Total execution time : {elapsedMs}";
         }
 
