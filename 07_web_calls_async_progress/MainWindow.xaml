@@ -21,7 +21,7 @@
             Démonstration d'application asynchrone
         </TextBlock>
         <Button x:Name="executeSync" Grid.Row="2" Margin="10" Padding="10" Click="executeSync_Click" Content="Exécution normale"/>
-        <Button x:Name="executeAsync" Grid.Row="3" Margin="10" Padding="10" Click="executeAsync_Click" Content="Exécution asynchrone parallèle"/>
+        <Button x:Name="executeAsync" Grid.Row="3" Margin="10" Padding="10" Click="executeAsync_Click" Content="Exécution asynchrone"/>
         <Button x:Name="executeParallelAsync" Grid.Row="4" Margin="10" Padding="10" Click="executeParallelAsync_Click" Content="Exécution asynchrone parallèle"/>
         <Button x:Name="cancelOperation" Grid.Row="5" Margin="10" Padding="10" Click="cancelOperation_Click" Content="Annuler l'opération"/>
         <ProgressBar x:Name="progressBar" Grid.Row="6" Margin="10" Height="20"/>

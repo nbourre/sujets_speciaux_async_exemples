@@ -35,7 +35,7 @@ namespace _01_web_calls
         {
 
             Progress<ProgressReportModel> progress = new Progress<ProgressReportModel>();
-            progress.ProgressChanged += ReportProgress;
+            progress.ProgressChanged += ReportProgress; // Ajout d'une méthode à l'événement
 
             var watch = Stopwatch.StartNew();
             var results = await DemoMethods.RunDownloadAsync(progress);
@@ -49,6 +49,11 @@ namespace _01_web_calls
             resultsWindow.Text += $"Total execution time : {elapsedMs}";
         }
 
+        /// <summary>
+        /// Méthode déclenchée lorsqu'il y a un événement de progression
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ReportProgress(object sender, ProgressReportModel e)
         {
             progressBar.Value = e.PercentageComplete;

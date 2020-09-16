@@ -43,20 +43,19 @@ namespace _01_web_calls
         public static async Task<List<WebsiteDataModel>> RunDownloadAsync(IProgress<ProgressReportModel> progress)
         {
             var websites = PrepData();
-            var output = new List<WebsiteDataModel>();
-            var report = new ProgressReportModel();
+            var output = new List<WebsiteDataModel>(); // Liste des sites à retourner
+            var report = new ProgressReportModel(); // Rapport de progression
 
             foreach (string site in websites)
             {
                 WebsiteDataModel ws = await DownloadWebsiteAsync(site);
-                output.Add(ws);
+                output.Add(ws); // On ajoute le site terminé à la liste
 
-                report.SitesDownloaded = output;
-                report.PercentageComplete = (output.Count * 100) / websites.Count;
+                report.SitesDownloaded = output; // On assigne la liste au rapport
+                report.PercentageComplete = (output.Count * 100) / websites.Count; // Calcul du %
 
-                progress.Report(report);
+                progress.Report(report); // On déclenche l'événement de rapportage
             }
-
             return output;
         }
 

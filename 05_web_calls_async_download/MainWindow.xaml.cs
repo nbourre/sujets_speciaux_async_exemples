@@ -17,6 +17,7 @@ namespace _01_web_calls
             InitializeComponent();
         }
 
+        #region Sync methods
         private void executeSync_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
@@ -31,7 +32,7 @@ namespace _01_web_calls
         }
 
         private void RunDownloadSync()
-        {            
+        {
             var websites = PrepData();
 
             foreach (string site in websites)
@@ -40,6 +41,23 @@ namespace _01_web_calls
                 ReportWebsiteInfo(ws);
             }
         }
+
+        private WebsiteDataModel DownloadWebsite(string websiteURL)
+        {
+            WebsiteDataModel output = new WebsiteDataModel();
+            WebClient client = new WebClient();
+            output.WebsiteUrl = websiteURL;
+            output.WebsiteData = client.DownloadString(websiteURL);
+
+            return output;
+        }
+
+        private void ReportWebsiteInfo(WebsiteDataModel data)
+        {
+            resultsWindow.Text += $"{data.WebsiteUrl} downloaded :  {data.WebsiteData.Length} characters long. {Environment.NewLine}";
+        }
+
+        #endregion
 
         private async Task RunDownloadAsync()
         {
@@ -68,21 +86,6 @@ namespace _01_web_calls
             {
                 ReportWebsiteInfo(site);
             }
-        }
-
-        private void ReportWebsiteInfo(WebsiteDataModel data)
-        {
-            resultsWindow.Text += $"{data.WebsiteUrl} downloaded :  {data.WebsiteData.Length} characters long. {Environment.NewLine}";
-        }
-
-        private WebsiteDataModel DownloadWebsite(string websiteURL)
-        {
-            WebsiteDataModel output = new WebsiteDataModel();
-            WebClient client = new WebClient();
-            output.WebsiteUrl = websiteURL;
-            output.WebsiteData = client.DownloadString(websiteURL);
-
-            return output;
         }
 
         private async Task<WebsiteDataModel> DownloadWebsiteAsync(string websiteURL)
