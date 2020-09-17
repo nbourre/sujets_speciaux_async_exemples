@@ -41,7 +41,8 @@ namespace _01_web_calls
             return output;
         }
 
-        public static async Task<List<WebsiteDataModel>> RunDownloadAsync(IProgress<ProgressReportModel> progress, CancellationToken cancellationToken)
+        public static async Task<List<WebsiteDataModel>> 
+            RunDownloadAsync(IProgress<ProgressReportModel> progress, CancellationToken cancellationToken)
         {
             var websites = PrepData();
             var output = new List<WebsiteDataModel>();
@@ -52,6 +53,8 @@ namespace _01_web_calls
                 WebsiteDataModel results = await DownloadWebsiteAsync(site);
                 output.Add(results);
 
+                /// On déclenche l'exception OperationCanceledException
+                /// SI DEMANDÉ
                 cancellationToken.ThrowIfCancellationRequested();
 
                 report.SitesDownloaded = output;

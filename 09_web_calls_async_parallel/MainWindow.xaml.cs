@@ -50,6 +50,7 @@ namespace _01_web_calls
             catch (OperationCanceledException)
             {
                 resultsWindow.Text += $"The async download was cancelled {Environment.NewLine}";
+                
             }
 
             watch.Stop();
@@ -73,10 +74,7 @@ namespace _01_web_calls
             var watch = Stopwatch.StartNew();
 
             var results = await DemoMethods.RunDownloadParallelAsyncV2(progress);
-
             PrintResults(results);
-            
-
             watch.Stop();
 
             var elapsedMs = watch.ElapsedMilliseconds;
