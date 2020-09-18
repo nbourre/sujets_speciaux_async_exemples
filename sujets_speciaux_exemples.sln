@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_web_calls_async_cancel",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_web_calls_async_parallel", "09_web_calls_async_parallel\09_web_calls_async_parallel.csproj", "{FAC6DE86-89D9-4764-B072-7730071BF00C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08b_web_calls_async_cancel_reset", "08b_web_calls_async_cancel_reset\08b_web_calls_async_cancel_reset.csproj", "{71CD5190-F9B1-486E-9DA3-BB09E3BD22B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{FAC6DE86-89D9-4764-B072-7730071BF00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAC6DE86-89D9-4764-B072-7730071BF00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAC6DE86-89D9-4764-B072-7730071BF00C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CD5190-F9B1-486E-9DA3-BB09E3BD22B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CD5190-F9B1-486E-9DA3-BB09E3BD22B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CD5190-F9B1-486E-9DA3-BB09E3BD22B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CD5190-F9B1-486E-9DA3-BB09E3BD22B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +129,7 @@ Global
 		{5D82A4EF-FC94-47EB-B88C-C9DCD3A53741} = {851A967D-76FA-4437-A586-FC51C9584C8D}
 		{B5EE95D2-8680-47FE-8363-2ECFF713C2CE} = {851A967D-76FA-4437-A586-FC51C9584C8D}
 		{FAC6DE86-89D9-4764-B072-7730071BF00C} = {851A967D-76FA-4437-A586-FC51C9584C8D}
+		{71CD5190-F9B1-486E-9DA3-BB09E3BD22B7} = {851A967D-76FA-4437-A586-FC51C9584C8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B275DE8-87BC-4257-AD9C-D05D9234F061}
