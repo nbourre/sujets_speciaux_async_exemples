@@ -1,0 +1,12 @@
+﻿<Application x:Class="demo_json_serialization.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:demo_json_serialization">
+    <Application.Resources>
+        <Style x:Key="allMargins">
+            <Setter Property="ItemsControl.Margin" Value="3"/>
+        </Style>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource ResourceKey=allMargins}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource ResourceKey=allMargins}"/>
+    </Application.Resources>
+</Application>
