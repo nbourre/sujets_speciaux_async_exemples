@@ -1,5 +1,4 @@
-﻿
-using demo_listView.Models;
+﻿using demo_listView.Models;
 using System;
 using System.Collections.ObjectModel;
 

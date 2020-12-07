@@ -1,5 +1,4 @@
-﻿using demo_json_serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -163,9 +162,9 @@ namespace serialization_object
                     case '6':
                         serialize_array();
                         break;
-                    case '8':
-                        start_wpf_app();
-                        break;
+                    //case '8':
+                    //    start_wpf_app();
+                    //    break;
                     case 'q':
                         break;
                     default:
@@ -183,13 +182,13 @@ namespace serialization_object
 
         }
 
-        private static void start_wpf_app()
-        {
+        //private static void start_wpf_app()
+        //{
 
-            MainWindow wnd = new MainWindow();
+        //    MainWindow wnd = new MainWindow();
 
-            System.Windows.Application wpfApp = new System.Windows.Application();
-            wpfApp.Run(wnd);
-        }
+        //    System.Windows.Application wpfApp = new System.Windows.Application();
+        //    wpfApp.Run(wnd);
+        //}
     }
 }

@@ -42,9 +42,9 @@
                                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Last name : "/>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Age name : " Panel.ZIndex="7"/>
 
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LastName}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Age}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName,UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LastName,UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Age,UpdateSourceTrigger=PropertyChanged}"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
