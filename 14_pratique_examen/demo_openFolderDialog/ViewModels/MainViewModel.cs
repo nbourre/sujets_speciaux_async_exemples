@@ -73,6 +73,7 @@ namespace demo_openFolderDialog.ViewModels
 
         private void ChooseFileToSave(string obj)
         {
+
             if (saveFileDialog.ShowDialog() == true)
             {
                 SaveFilename = saveFileDialog.FileName;

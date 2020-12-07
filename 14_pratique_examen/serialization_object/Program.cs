@@ -10,8 +10,8 @@ namespace serialization_object
     {
         static Person p = new Person
         {
-            FirstName = "Nick",
-            LastName = "B",
+            FirstName = "Mick",
+            LastName = "Jagger",
             City = "Shawinigan",
             Birthday = DateTime.Parse("1980-01-01")
         };        
@@ -51,22 +51,69 @@ namespace serialization_object
 
             Console.ReadLine();
         }
-
-        static void serialize_array()
+        
+        static List<Person> GetArrayExample()
         {
-            var data = new List<Person>
+            return new List<Person>
             {
                 new Person { FirstName = "Ayanna", LastName = "Vargas", Birthday = DateTime.Parse("1967-12-25"), City = "Pickering", Province = "ON", Email = "purus.in@semvitae.edu", Mobile = "647-142-8014" },
                 new Person { FirstName = "Whitney", LastName = "Parks", Birthday = DateTime.Parse("1978-03-24"), City = "Greater Sudbury", Province = "ON", Email = "consectetuer.euismod@adipiscingelit.net", Mobile = "624-767-4994" },
                 new Person { FirstName = "Louis", LastName = "Watts", Birthday = DateTime.Parse("1974-07-09"), City = "Fredericton", Province = "NB", Email = "at@gravidamolestie.ca", Mobile = "253-179-3847" },
                 new Person { FirstName = "Pamela", LastName = "Knapp", Birthday = DateTime.Parse("1985-03-13"), City = "Mission", Province = "BC", Email = "eget.dictum@Aliquamvulputate.ca", Mobile = "501-312-8343" },
             };
+        }
+
+        static void serialize_array()
+        {
+            var data = GetArrayExample();
 
             var resultat = JsonConvert.SerializeObject(data, Formatting.Indented);
 
             Console.WriteLine(resultat);
             Console.WriteLine("Appuyez sur une touche.");
             Console.ReadLine();
+        }
+
+        static void save_array_to_file(string filename)
+        {
+            var data = GetArrayExample();
+
+            var resultat = JsonConvert.SerializeObject(data, Formatting.Indented);
+
+            using (var tw = new StreamWriter(filename))
+            {
+                tw.WriteLine(resultat);
+                tw.Close();
+            }
+
+            Console.WriteLine($"Exemple de sauvegarde dans le fichier {filename}");
+            Console.WriteLine($"Ouvrir le fichier {filename} dans un éditeur pour voir le résultat");
+            Console.WriteLine("Appuyez sur une touche.");
+
+            Console.ReadLine();
+        }
+
+        static void deserialize_array_from_file(string filename)
+        {
+            if (!File.Exists(filename))
+            {
+                Console.WriteLine($"Le fichier {filename} n'existe pas. Veuillez le générer à partir de la sérialisation d'un tableau vers un fichier.");
+                Console.ReadKey();
+                return;
+            }
+
+            List<Person> data;
+            using (StreamReader sr = File.OpenText(filename))
+            {
+                var fileContent = sr.ReadToEnd();
+
+                data = JsonConvert.DeserializeObject<List<Person>>(fileContent);
+            }
+
+            Console.WriteLine($"Le fichier {filename} contient {data.Count} enregistrements.");
+            Console.WriteLine($"Le premier enregistrement est : {data[0]}");
+            Console.ReadLine();
+
         }
         
         static void serialize_object_inheritance()
@@ -119,6 +166,7 @@ namespace serialization_object
                 Console.WriteLine(fileContent);
                 Console.WriteLine($"***** {nameof(Person)}.toString() *****");
                 Console.WriteLine(p);
+                Console.ReadLine();
             }
         }
 
@@ -136,6 +184,8 @@ namespace serialization_object
                 Console.WriteLine("4. Désérialization d'une string vers un objet");
                 Console.WriteLine("5. Sauvegarde vers un fichier texte");
                 Console.WriteLine("6. Sérialisation d'un tableau");
+                Console.WriteLine("7. Sérialisation d'un tableau vers un fichier");
+                Console.WriteLine("8. Désérialisation d'un tableau à partir d'un fichier");
                 Console.WriteLine("q. Quitter");
                 Console.Write("Quel est votre choix : ");
                 var result = Console.ReadKey();
@@ -162,9 +212,12 @@ namespace serialization_object
                     case '6':
                         serialize_array();
                         break;
-                    //case '8':
-                    //    start_wpf_app();
-                    //    break;
+                    case '7':
+                        save_array_to_file("people.json");
+                        break;
+                    case '8':
+                        deserialize_array_from_file("people.json");
+                        break;
                     case 'q':
                         break;
                     default:
@@ -181,6 +234,8 @@ namespace serialization_object
 
 
         }
+
+        /// TODO : Exemple de désérialization d'une collection
 
         //private static void start_wpf_app()
         //{
