@@ -16,8 +16,13 @@ namespace serialization_object
             Birthday = DateTime.Parse("1980-01-01")
         };        
 
+        /// <summary>
+        /// Méthode permettant de convertir un modèle en json
+        /// </summary>
+        /// <param name="format"></param>
         public static void simple_object_test(Formatting format = Formatting.None)
         {
+            /// Cette méthode converti un modèle en format json
             string resultat = JsonConvert.SerializeObject(p, format);
 
             Console.WriteLine("Exemple de conversion d'un objet simple");
@@ -34,6 +39,10 @@ namespace serialization_object
                 * */
         }
 
+        /// <summary>
+        /// Cette méthode montre comment sauvegarder un objet en format json dans un fichier texte
+        /// </summary>
+        /// <param name="filename">Nom du fichier</param>
         static void save_to_file(string filename)
         {
 
@@ -52,6 +61,10 @@ namespace serialization_object
             Console.ReadLine();
         }
         
+        /// <summary>
+        /// Fonction retournant une liste de personnes
+        /// </summary>
+        /// <returns>Liste de personnnes</returns>
         static List<Person> GetArrayExample()
         {
             return new List<Person>
@@ -63,6 +76,9 @@ namespace serialization_object
             };
         }
 
+        /// <summary>
+        /// Exemple de sérialization d'une collection
+        /// </summary>
         static void serialize_array()
         {
             var data = GetArrayExample();
@@ -74,6 +90,10 @@ namespace serialization_object
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Sauvegarde d'une liste en format json dans un fichier
+        /// </summary>
+        /// <param name="filename">Nom du fichier désiré</param>
         static void save_array_to_file(string filename)
         {
             var data = GetArrayExample();
@@ -93,6 +113,13 @@ namespace serialization_object
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Exemple de désérialisation d'un json qui est dans un fichier vers un objet.
+        /// La mécanique est la suivante :
+        /// 1 - Lire le contenu du fichier en string
+        /// 2 - Convertir le string avec la méthode JsonConvert.DeserializeObject
+        /// </summary>
+        /// <param name="filename">Chemin vers le fichier</param>
         static void deserialize_array_from_file(string filename)
         {
             if (!File.Exists(filename))
@@ -116,6 +143,11 @@ namespace serialization_object
 
         }
         
+        /// <summary>
+        /// Cette méthode converti un objet d'une classe qui hérite d'une autre classe
+        /// La fonction de sérialisation est exactement la même que celle retrouvée dans
+        /// <see cref="simple_object_test(Formatting)"/>
+        /// </summary>
         static void serialize_object_inheritance()
         {
             Student student = new Student
@@ -137,11 +169,17 @@ namespace serialization_object
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Cette méthode converti un objet d'une classe qui a une collection d'objets
+        /// La fonction de sérialisation est exactement la même que celle retrouvée dans
+        /// <see cref="simple_object_test(Formatting)"/> et 
+        /// <see cref="serialize_object_inheritance"/>
+        /// </summary>
         static void serialize_object_aggregation()
         {
+            // Le @ devant un nom sert à distinguer le mot-clé réservé au nom de l'objet
             Classroom @class = new Classroom { Name = "Special subjects" };
             
-
             string resultat = JsonConvert.SerializeObject(@class, Formatting.Indented);
             
             Console.WriteLine("Exemple de conversion d'un objet avec aggrégat");
@@ -151,10 +189,14 @@ namespace serialization_object
             Console.ReadLine();
         }
 
-        static void deserialize_from_file_to_object() 
+
+        static void deserialize_from_file_to_object()
         {
             var filename = "person.json";
+
+            // Pour l'exercice, si le fichier n'existe pas, on va en générer un
             if (!File.Exists(filename)) save_to_file(filename);
+
 
             using (StreamReader sr = File.OpenText(filename))
             {
