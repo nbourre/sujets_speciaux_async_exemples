@@ -100,6 +100,7 @@ namespace demo_openFolderDialog.ViewModels
             {
                 FileContent = "-- FileContent --" + Environment.NewLine;
                 FileContent += sr.ReadToEnd();
+                
             }
         }
     }

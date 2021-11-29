@@ -277,7 +277,7 @@ namespace serialization_object
 
         }
 
-        /// TODO : Exemple de désérialization d'une collection
+        /// TODO pour le prof: Exemple de désérialization d'une collection
 
         //private static void start_wpf_app()
         //{
