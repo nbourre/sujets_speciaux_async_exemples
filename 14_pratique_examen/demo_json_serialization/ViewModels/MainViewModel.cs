@@ -10,6 +10,9 @@ namespace demo_json_serialization.ViewModels
     {
         private bool firstLoad = true;
 
+        /// <summary>
+        /// Liste des VM
+        /// </summary>
         public List<BaseViewModel> ContentViewModels { get; set; }
 
         public PersonViewModel PersonViewModel { get; set; }
@@ -48,6 +51,10 @@ namespace demo_json_serialization.ViewModels
             ChangePageCommand = new DelegateCommand<BaseViewModel>(ChangePage);
         }
 
+        /// <summary>
+        /// Permet de changer le VM actuel
+        /// </summary>
+        /// <param name="vm"></param>
         private void ChangePage(BaseViewModel vm)
         {
             if (firstLoad)

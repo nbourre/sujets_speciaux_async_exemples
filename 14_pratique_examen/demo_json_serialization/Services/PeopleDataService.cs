@@ -16,6 +16,7 @@ namespace demo_json_serialization.Services
         /// Le type Lazy permet de charger la classe seulement au premier
         /// appel d'Instance. Cela permet d'économiser de la mémoire
         /// Remarquez que le constructeur est privé.
+        /// ATTENTION! Le Lazy Loading n'est pas matière à l'examen.
         /// </summary>
         private static readonly Lazy<PeopleDataService> lazy = new Lazy<PeopleDataService>(() => new PeopleDataService());
         public static PeopleDataService Instance { get => lazy.Value; }

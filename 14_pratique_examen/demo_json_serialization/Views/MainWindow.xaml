@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:demo_json_serialization"
         xmlns:vm="clr-namespace:demo_json_serialization.ViewModels"
         xmlns:views="clr-namespace:demo_json_serialization.Views"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
@@ -21,8 +22,14 @@
             </MenuItem>
         </Menu>
         <Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="0 0 1 0">
+            <!--Permet d'afficher une collection d'item. Dans ce cas : ContentViewModels -->
             <ItemsControl ItemsSource="{Binding ContentViewModels}">
+                <!--Comment veut-on afficher chaque item -->
                 <ItemsControl.ItemTemplate>
+                    <!--
+                    Comment afficher la données. Dans ce cas spécifique, il s'agit
+                    d'objet BaseViewModel 
+                    -->
                     <DataTemplate>
                         <Button Content="{Binding Name}"
                                 Command="{Binding DataContext.ChangePageCommand, 

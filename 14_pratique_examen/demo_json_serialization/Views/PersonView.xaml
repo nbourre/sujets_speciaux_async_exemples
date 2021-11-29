@@ -33,6 +33,7 @@
         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Mobile, UpdateSourceTrigger=PropertyChanged}"/>
         <DatePicker Grid.Row="4" Grid.Column="1" Text="{Binding Birthday, UpdateSourceTrigger=PropertyChanged}"/>
 
+        <!--TODO Corriger l'affichage --> 
         <StackPanel Orientation="Horizontal">
             <Button Content=">" Command="{Binding NextRecordCommand}"/>
             <Button Content="Save" Command="{Binding SaveCommand}"/>

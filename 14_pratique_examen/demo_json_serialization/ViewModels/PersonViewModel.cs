@@ -101,6 +101,8 @@ namespace demo_json_serialization.ViewModels
 
         #endregion
 
+        // TODO : Ajouter un PreviousRecordCommand fonctionnel incluant le UI
+
         public DelegateCommand<string> NextRecordCommand { get; set; }
         public DelegateCommand<string> SaveCommand { get; set; }
 

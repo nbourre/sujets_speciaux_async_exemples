@@ -28,6 +28,9 @@ namespace demo_listView.ViewModels
             }
         }
 
+        // TODO : Ajouter une commande pour charger un fichier
+        // TODO : Ajouter une commande pour sauvegarder dans un fichier
+
         public MainViewModel()
         {
             populate();
