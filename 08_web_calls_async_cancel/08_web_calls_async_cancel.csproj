@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>_01_web_calls</RootNamespace>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
