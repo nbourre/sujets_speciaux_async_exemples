@@ -11,18 +11,19 @@ namespace _01_web_calls
     {
         private static List<string> PrepData()
         {
-            var output = new List<string>();
-
-            output.Add("https://www.lapresse.ca");
-            output.Add("https://www.reddit.com");
-            output.Add("https://www.microsoft.com");
-            output.Add("https://www.amazon.ca");
-            output.Add("https://www.stackoverflow.com");
-            output.Add("https://www.facebook.com");
-            output.Add("https://www.google.ca");
-            output.Add("https://www.hotmail.com");
-            output.Add("https://www.codeproject.com");
-            output.Add("https://fr.wikipedia.org");
+            var output = new List<string>
+            {
+                "https://www.lapresse.ca",
+                "https://www.reddit.com",
+                "https://www.microsoft.com",
+                "https://www.amazon.ca",
+                "https://www.stackoverflow.com",
+                "https://www.facebook.com",
+                "https://www.google.ca",
+                "https://www.hotmail.com",
+                "https://www.codeproject.com",
+                "https://fr.wikipedia.org"
+            };
 
             return output;
         }

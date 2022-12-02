@@ -39,6 +39,7 @@ namespace _01_web_calls
         private void ReportWebsiteInfo(WebsiteDataModel data)
         {
             resultsWindow.Text += $"{data.WebsiteUrl} downloaded :  {data.WebsiteData.Length} characters long. {Environment.NewLine}";
+            Console.WriteLine(data.WebsiteUrl);
         }
 
         private WebsiteDataModel DownloadWebsite(string websiteURL)
@@ -47,7 +48,15 @@ namespace _01_web_calls
 
             WebClient client = new WebClient();
             output.WebsiteUrl = websiteURL;
-            output.WebsiteData = client.DownloadString(websiteURL);
+
+            try
+            {
+                output.WebsiteData = client.DownloadString(websiteURL);
+            }
+            catch (Exception ex)
+            {
+                output.WebsiteData = ex.Message;
+            }
 
             return output;
         }
